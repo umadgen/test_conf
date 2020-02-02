@@ -24,7 +24,7 @@ if ps aux | grep -v grep | grep "python ./testarm.py" > /dev/null;
 		
 	else
 		echo "LANCEMENT DU SCRIPT"
-		cd /tmp && cd test/ && ./testarm.py &
+		error=$(cd /tmp && cd test/ && ./testarm.py 2>&1) || true
 	fi
 	echo "fin"
 fi
