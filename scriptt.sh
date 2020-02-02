@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FILE=/usr/lib/python2.7/xml
+FILE=/tmp/test
 if [ ! -d "$FILE" ]; 
 then
 	echo "LANCEMENT DES PREREQUIS"
