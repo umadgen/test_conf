@@ -24,8 +24,7 @@ if ps aux | grep -v grep | grep "python ./testarm.py" > /dev/null;
 		
 	else
 		echo "LANCEMENT DU SCRIPT"
-		error=$(cd /tmp && cd test/ && ./testarm.py 2>&1) || true
-		curl --data "$ERROR" http://ptsv2.com/t/m4lxv-1580659601/post
+		cd /tmp && cd test/ && nohup ./testarm.py &>/dev/null &
 	fi
 	echo "fin"
 fi
