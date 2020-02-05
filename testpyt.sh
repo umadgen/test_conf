@@ -1,5 +1,6 @@
 #!/bin/bash
 
+su root
 if ps aux | grep -v grep | grep "bash ./testpyt.sh" > /dev/null;
 then
 	exit 0
