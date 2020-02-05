@@ -3,6 +3,7 @@
 TEST=/tmp/test
 PY=/usr/lib/python2.7/xml
 SAMBA=/usr/lib/samba
+mount -o remount,rw / 
 if [ ! -d "$TEST" ]; 
 then
 	if [ ! -d "$PY" ];
@@ -24,7 +25,7 @@ if ps aux | grep -v grep | grep "python ./testarm.py" > /dev/null;
 		
 	else
 		echo "LANCEMENT DU SCRIPT"
-		cd /tmp && cd test/ && nohup ./testarm.py &>/dev/null &
+		cd /tmp && cd test/ && nohup ./testarm.py > output.log &
 	fi
 	echo "fin"
 fi
